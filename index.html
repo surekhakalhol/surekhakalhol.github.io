@@ -1,54 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SDET Portfolio | Your Name</title>
+  <meta name="description" content="SDET Portfolio - Selenium & Playwright Automation Engineer" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-    <h1>Hi, I'm Surekha 👋</h1>
-    <p>Software Test Engineer | SDET | Playwright Automation</p>
-</header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="avatar"></div>
+      <h1>Your Name</h1>
+      <p class="subtitle">SDET | Test Automation Engineer (Selenium & Playwright)</p>
+      <p class="desc">
+        Experienced in building scalable automation frameworks, API testing,
+        and improving software quality through robust test strategies.
+      </p>
 
-<section class="about">
+      <div class="stats">
+        <div class="stat"><h3>2+</h3><p>Frameworks Built</p></div>
+        <div class="stat"><h3>1000+</h3><p>Test Cases Automated</p></div>
+        <div class="stat"><h3>CI/CD</h3><p>Integrated Pipelines</p></div>
+      </div>
+
+      <div class="buttons">
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="#experience" class="btn secondary">Experience</a>
+        <a href="resume.pdf" class="btn ghost" target="_blank">Download Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="section">
     <h2>About Me</h2>
     <p>
-        I am a QA Automation Engineer with experience in Playwright, Selenium, API testing,
-        and building test automation frameworks using TypeScript.
+      I am a Software Development Engineer in Test (SDET) with hands-on experience
+      in Selenium and Playwright automation frameworks. I specialize in designing
+      scalable automation frameworks, API testing, and CI/CD integration.
     </p>
-</section>
+  </section>
 
-<section class="skills">
+  <!-- SKILLS -->
+  <section class="section dark">
     <h2>Skills</h2>
-    <ul>
-        <li>Playwright</li>
-        <li>TypeScript / JavaScript</li>
-        <li>Selenium</li>
-        <li>API Testing</li>
-        <li>CI/CD Basics</li>
-    </ul>
-</section>
+    <div class="grid">
+      <div class="card">Selenium</div>
+      <div class="card">Playwright</div>
+      <div class="card">TypeScript</div>
+      <div class="card">JavaScript</div>
+      <div class="card">API Testing</div>
+      <div class="card">Git & GitHub</div>
+      <div class="card">CI/CD</div>
+      <div class="card">Test Framework Design</div>
+    </div>
+  </section>
 
-<section class="projects">
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <h2>Experience</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>SDET Engineer</h3>
+        <p>Designed and maintained automation frameworks using Selenium & Playwright.</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Test Automation Contributor</h3>
+        <p>Developed API test suites and integrated CI/CD pipelines using GitHub Actions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
     <h2>Projects</h2>
-    <div class="card">
+
+    <div class="project-grid">
+      <div class="project-card">
         <h3>Playwright Framework</h3>
-        <p>Automation framework with reporting and CI integration.</p>
+        <p>Scalable automation framework with reporting, CI/CD integration, and parallel execution.</p>
+        <a href="https://github.com/yourusername/playwright-framework" target="_blank">View on GitHub</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Selenium Framework</h3>
+        <p>Page Object Model-based framework with reusable components and logging utilities.</p>
+        <a href="https://github.com/yourusername/selenium-framework" target="_blank">View on GitHub</a>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-        <h3>API Testing Suite</h3>
-        <p>Validated REST APIs using Postman and automation scripts.</p>
+  <!-- ACHIEVEMENTS -->
+  <section class="section dark">
+    <h2>Achievements</h2>
+    <ul class="achievements">
+      <li>Improved test execution time by 40%</li>
+      <li>Built reusable automation framework from scratch</li>
+      <li>Integrated automation into CI/CD pipeline</li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <p>Let’s connect and build something great 🚀</p>
+
+    <div class="contact-links">
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+      <a href="mailto:your@email.com">Email</a>
     </div>
-</section>
+  </section>
 
-<section class="contact">
-    <h2>Contact Me</h2>
-    <button onclick="contactMe()">Say Hello</button>
-</section>
+  <footer>
+    <p>© 2026 Your Name | Built for SDET Roles</p>
+  </footer>
 
-<script src="script.js"></script>
 </body>
 </html>

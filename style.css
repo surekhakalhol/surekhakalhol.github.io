@@ -1,219 +1,254 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SDET Portfolio | Your Name</title>
+/* =========================
+   ROOT VARIABLES
+========================= */
+:root {
+  --bg: #0b1220;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #60a5fa;
+  --accent2: #a78bfa;
+  --card: rgba(255, 255, 255, 0.06);
+}
 
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+/* =========================
+   BASE STYLES
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <style>
-  :root {
-    --bg:#0b1220;
-    --card:rgba(255,255,255,0.06);
-    --text:#e5e7eb;
-    --muted:#94a3b8;
-    --accent:#60a5fa;
-    --accent2:#a78bfa;
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.navbar a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* glow background */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  filter: blur(140px);
+  opacity: 0.3;
+}
+
+.hero::before {
+  background: var(--accent2);
+  top: -100px;
+  left: -100px;
+}
+
+.hero::after {
+  background: var(--accent);
+  bottom: -100px;
+  right: -100px;
+}
+
+/* =========================
+   PROFILE IMAGE (FIXED)
+========================= */
+.avatar-wrap {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  padding: 5px;
+  background: conic-gradient(
+    from 180deg,
+    var(--accent),
+    var(--accent2),
+    var(--accent)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 6s linear infinite;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  background: #111;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* hover effect */
+.avatar-wrap:hover {
+  box-shadow: 0 0 25px var(--accent);
+}
+
+.avatar-wrap:hover img {
+  transform: scale(1.1);
+  transition: 0.4s ease;
+}
+
+/* rotation animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   STATS
+========================= */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.stat {
+  background: var(--card);
+  padding: 15px;
+  border-radius: 12px;
+  min-width: 120px;
+  text-align: center;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin: 5px;
+  transition: 0.3s;
+}
+
+.primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+}
+
+.secondary {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* =========================
+   GRID / SKILLS
+========================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: var(--card);
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* =========================
+   FLOATING BUTTON
+========================= */
+.floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--muted);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .stats {
+    flex-direction: column;
+    align-items: center;
   }
 
-  *{box-sizing:border-box;}
-
-  body{
-    margin:0;
-    font-family:Inter,sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    cursor:none;
+  .navbar ul {
+    gap: 10px;
   }
-
-  /* CURSOR */
-  .cursor{
-    width:18px;height:18px;
-    border-radius:50%;
-    position:fixed;
-    background:radial-gradient(circle,var(--accent),transparent);
-    pointer-events:none;
-    transform:translate(-50%,-50%);
-    z-index:9999;
-  }
-
-  /* NAV */
-  .navbar{
-    position:sticky;
-    top:0;
-    display:flex;
-    justify-content:space-between;
-    padding:14px 28px;
-    background:rgba(0,0,0,0.4);
-    backdrop-filter:blur(10px);
-  }
-
-  .navbar ul{display:flex;gap:18px;list-style:none;}
-  .navbar a{color:var(--text);text-decoration:none;}
-
-  /* HERO */
-  .hero{
-    min-height:92vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:60px 20px;
-    position:relative;
-  }
-
-  .hero::before,.hero::after{
-    content:'';
-    position:absolute;
-    width:420px;height:420px;
-    filter:blur(140px);
-    opacity:0.3;
-  }
-  .hero::before{background:var(--accent2);top:-120px;left:-120px;}
-  .hero::after{background:var(--accent);bottom:-120px;right:-120px;}
-
-  .hero-content{position:relative;z-index:2;max-width:850px;}
-
-  /* ================= PROFILE PICTURE UPGRADE ================= */
-  .avatar-wrap{
-    width:150px;
-    height:150px;
-    margin:0 auto 18px;
-    border-radius:50%;
-    padding:4px;
-    background:conic-gradient(from 180deg,var(--accent),var(--accent2),var(--accent));
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    animation:spin 6s linear infinite;
-  }
-
-  .avatar{
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    overflow:hidden;
-    border:3px solid rgba(255,255,255,0.1);
-    transition:0.4s ease;
-  }
-
-  .avatar img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:0.4s ease;
-  }
-
-  .avatar-wrap:hover .avatar img{
-    transform:scale(1.1);
-  }
-
-  .avatar-wrap:hover{
-    filter:drop-shadow(0 0 18px var(--accent));
-  }
-
-  @keyframes spin{
-    0%{transform:rotate(0deg)}
-    100%{transform:rotate(360deg)}
-  }
-
-  /* TEXT */
-  .stats{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:20px;}
-  .stat{background:var(--card);padding:14px;border-radius:12px;}
-
-  .btn{padding:10px 16px;border-radius:10px;text-decoration:none;display:inline-block;}
-  .primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;}
-  .secondary{border:1px solid var(--accent);color:var(--accent);}
-
-  /* SECTIONS */
-  .section{padding:80px 20px;max-width:1000px;margin:auto;}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;}
-  .card{background:var(--card);padding:14px;border-radius:12px;text-align:center;}
-
-  footer{text-align:center;padding:30px;color:var(--muted);}
-  </style>
-</head>
-<body>
-
-<div class="cursor"></div>
-
-<nav class="navbar">
-  <div><b>SDET Portfolio</b></div>
-  <ul>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<header class="hero">
-  <div class="hero-content" data-aos="fade-up">
-
-    <!-- UPGRADED PROFILE PICTURE -->
-    <div class="avatar-wrap">
-      <div class="avatar">
-        <img src="profile.jpg" alt="Profile Picture" />
-      </div>
-    </div>
-
-    <h1>Your Name</h1>
-    <p>SDET | Selenium & Playwright Automation Engineer</p>
-
-    <div class="stats">
-      <div class="stat">2+ Frameworks</div>
-      <div class="stat">1000+ Test Cases</div>
-      <div class="stat">CI/CD Pipelines</div>
-    </div>
-
-    <div style="margin-top:20px">
-      <a class="btn primary" href="#projects">View Projects</a>
-      <a class="btn secondary" href="#contact">Contact</a>
-    </div>
-  </div>
-</header>
-
-<section class="section" id="skills">
-  <h2>Skills</h2>
-  <div class="grid">
-    <div class="card">Selenium</div>
-    <div class="card">Playwright</div>
-    <div class="card">TypeScript</div>
-    <div class="card">API Testing</div>
-  </div>
-</section>
-
-<section class="section" id="projects">
-  <h2>Projects</h2>
-  <div class="card">Playwright Automation Framework</div>
-</section>
-
-<section class="section" id="experience">
-  <h2>Experience</h2>
-  <div class="card">SDET - Automation Framework Development</div>
-</section>
-
-<section class="section" id="contact">
-  <h2>Contact</h2>
-  <p>Email: your@email.com</p>
-</section>
-
-<footer>
-  © 2026 Your Name | SDET Portfolio
-</footer>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init();</script>
-
-<script>
-const cursor=document.querySelector('.cursor');
-document.addEventListener('mousemove',e=>{
-  cursor.style.left=e.pageX+'px';
-  cursor.style.top=e.pageY+'px';
-});
-</script>
-
-</body>
-</html>
+}
